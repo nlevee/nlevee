@@ -1,0 +1,48 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: clone-hello
+spec:
+  params:
+    - name: repo-url
+      type: string
+  workspaces:
+    - name: workdir
+    - name: dockerconfig
+  tasks:
+    - name: git-clone
+      taskRef:
+        kind: ClusterTask
+        name: git-clone
+      workspaces:
+        - name: output
+          workspace: workdir
+      params:
+        - name: url
+          value: "$(params.repo-url)"
+    - name: golang-test
+      runAfter: ["git-clone"]
+      taskRef:
+        kind: Task
+        name: golang-test
+      workspaces:
+        - name: source
+          workspace: workdir
+      params:
+        - name: package
+          value: ./
+    - name: docker-build
+      runAfter: ["golang-test"]
+      taskRef:
+        kind: Task
+        name: kaniko
+      workspaces:
+        - name: source
+          workspace: workdir
+        - name: dockerconfig
+          workspace: dockerconfig
+      params:
+        - name: IMAGE
+          value: ghcr.io/nlevee/nlevee:latest
+        
+      
