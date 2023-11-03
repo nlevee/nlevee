@@ -9,6 +9,7 @@
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)](#)
 [![ArgoCD](https://img.shields.io/badge/ArgoCD-009485?style=flat-square&logo=argo&logoColor=white)](#)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](#)
+[![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)](#)
 [![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)](#)
 
 [![My GitHub stats](https://github-readme-stats.vercel.app/api?username=nlevee&hide_rank=true&count_private=true&include_all_commits=true&show_icons=true&theme=github_dark)](#)
